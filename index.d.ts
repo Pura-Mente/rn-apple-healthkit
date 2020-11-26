@@ -11,6 +11,11 @@ declare module "rn-apple-healthkit" {
         limit?: number
     }
 
+    export interface MindfulSessionOptions {
+        startDate: Date,
+        endDate?: Date
+    }
+
     export interface AppleHealthKit {
         initHealthKit(permissions: HealthKitPermissions, callback: (error: string, result: Object) => void): void;
 
@@ -27,6 +32,10 @@ declare module "rn-apple-healthkit" {
         getMindfulSession(options: MindfulSessionData, callback: (err: string, results: HealthValue) => void): void;
 
         getStepCount(options: any, callback: (err: string, results: HealthValue) => void): void;
+
+        getSleepSamples(options: MindfulSessionData, callback: (err: string, results: Array<Object>) => void): void;
+
+        saveMindfulSession(options: MindfulSessionOptions, callback: (err: string, result: Oject) => void): void;
     }
 
     export interface HealthDateOfBirth {
