@@ -6,14 +6,14 @@ declare module "rn-apple-healthkit" {
         };
     }
     export interface MindfulSessionData {
-        startDate?: Date,
-        endDate?: Date,
+        startDate?: String,
+        endDate?: String,
         limit?: number
     }
 
     export interface MindfulSessionOptions {
-        startDate: Date,
-        endDate?: Date
+        startDate: String,
+        endDate?: String
     }
 
     export interface AppleHealthKit {
@@ -35,7 +35,7 @@ declare module "rn-apple-healthkit" {
 
         getSleepSamples(options: MindfulSessionData, callback: (err: string, results: Array<Object>) => void): void;
 
-        saveMindfulSession(options: MindfulSessionOptions, callback: (err: string, result: Oject) => void): void;
+        saveMindfulSession(options: MindfulSessionOptions, callback: (err: string, result: Object) => void): void;
     }
 
     export interface HealthDateOfBirth {
